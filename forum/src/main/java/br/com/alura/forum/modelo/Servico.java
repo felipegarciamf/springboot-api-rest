@@ -16,9 +16,7 @@ public class Servico {
 	
 	private String nomeServico;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
-	
-	@ManyToOne
-	private Usuario prestadorServico;
+
 	
 	public Servico() {
 	}
@@ -27,11 +25,6 @@ public class Servico {
 		this.nomeServico = nomeServico;
 	}
 	
-	public Servico(String nomeServico, LocalDateTime dataCriacao, Usuario prestadorServico) {
-		this.nomeServico = nomeServico;
-		this.dataCriacao = dataCriacao;
-		this.prestadorServico = prestadorServico;
-	}
 
 	@Override
 	public int hashCode() {
@@ -83,13 +76,6 @@ public class Servico {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public Usuario getPrestadorServico() {
-		return prestadorServico;
-	}
-
-	public void setPrestadorServico(Usuario prestadorServico) {
-		this.prestadorServico = prestadorServico;
-	}
 
 	
 }

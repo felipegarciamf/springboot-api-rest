@@ -7,6 +7,6 @@ INSERT INTO TOPICO(titulo, mensagem, data_criacao, status, autor_id, curso_id) V
 INSERT INTO TOPICO(titulo, mensagem, data_criacao, status, autor_id, curso_id) VALUES('Dúvida', 'Erro ao criar projeto', '2019-05-05 20:33', 'NAO_RESPONDIDO', 1, 2);
 INSERT INTO TOPICO(titulo, mensagem, data_criacao, status, autor_id, curso_id) VALUES('Dúvida', 'Erro ao criar projeto', '2019-05-05 20:33', 'NAO_RESPONDIDO', 1, 1);
 
-INSERT INTO SERVICO(nome_servico, prestador_servico_id) VALUES ('Mecânico', 1);
-INSERT INTO SERVICO(nome_servico, prestador_servico_id) VALUES ('Eletricista', 1);
-INSERT INTO SERVICO(nome_servico, prestador_servico_id) VALUES ('Cabelereiro', 1);
+INSERT INTO SERVICO(nome_servico) VALUES ('Mecânico');
+INSERT INTO SERVICO(nome_servico) VALUES ('Eletricista');
+INSERT INTO SERVICO(nome_servico) VALUES ('Cabelereiro');

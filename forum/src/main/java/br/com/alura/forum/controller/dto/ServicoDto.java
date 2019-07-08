@@ -11,9 +11,12 @@ public class ServicoDto {
 	
 	private String nomeServico;
 	
+	private String iconeServico;
+	
 	public ServicoDto(Servico servico) {
 		this.id = servico.getId();
 		this.nomeServico = servico.getNomeServico();
+		this.iconeServico = servico.getIconeServico();
 	}
 
 	public Long getId() {
@@ -34,6 +37,14 @@ public class ServicoDto {
 
 	public static List<ServicoDto> converter(List<Servico> servicos) {
 		return servicos.stream().map(ServicoDto::new).collect(Collectors.toList());
+	}
+
+	public String getIconeServico() {
+		return iconeServico;
+	}
+
+	public void setIconeServico(String iconeServico) {
+		this.iconeServico = iconeServico;
 	}
 
 	

@@ -6,6 +6,9 @@ public class ServicoForm {
 	
 	private String nomeServico;
 
+
+	private String iconeServico;
+
 	public String getNomeServico() {
 		return nomeServico;
 	}
@@ -13,9 +16,17 @@ public class ServicoForm {
 	public void setNomeServico(String nomeServico) {
 		this.nomeServico = nomeServico;
 	}
+	
+	public String getIconeServico() {
+		return iconeServico;
+	}
+
+	public void setIconeServico(String iconeServico) {
+		this.iconeServico = iconeServico;
+	}
 
 	public Servico converter() {
-		return new Servico(nomeServico);
+		return new Servico(nomeServico, iconeServico);
 	}
 
 }

@@ -15,14 +15,16 @@ public class Servico {
 	private Long id;
 	
 	private String nomeServico;
+	private String iconeServico;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 
 	
 	public Servico() {
 	}
 	
-	public Servico(String nomeServico) {
+	public Servico(String nomeServico, String iconeServico) {
 		this.nomeServico = nomeServico;
+		this.iconeServico = iconeServico;
 	}
 	
 
@@ -74,6 +76,14 @@ public class Servico {
 
 	public void setDataCriacao(LocalDateTime dataCriacao) {
 		this.dataCriacao = dataCriacao;
+	}
+
+	public String getIconeServico() {
+		return iconeServico;
+	}
+
+	public void setIconeServico(String iconeServico) {
+		this.iconeServico = iconeServico;
 	}
 
 

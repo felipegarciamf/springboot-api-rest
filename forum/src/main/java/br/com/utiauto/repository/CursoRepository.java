@@ -1,8 +1,8 @@
-package br.com.alura.forum.repository;
+package br.com.utiauto.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.alura.forum.modelo.Curso;
+import br.com.utiauto.modelo.Curso;
 
 public interface CursoRepository extends JpaRepository<Curso, Long>{
 

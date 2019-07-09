@@ -1,12 +1,18 @@
-package br.com.alura.forum.controller.form;
+package br.com.utiauto.controller.form;
 
-import br.com.alura.forum.modelo.Servico;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
+
+import br.com.utiauto.modelo.Servico;
 
 public class ServicoForm {
 	
+	@NotNull @NotEmpty @Length(min = 2)
 	private String nomeServico;
 
-
+	@NotNull @NotEmpty
 	private String iconeServico;
 
 	public String getNomeServico() {

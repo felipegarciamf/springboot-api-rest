@@ -1,7 +1,9 @@
-package br.com.alura.forum.controller;
+package br.com.utiauto.controller;
 
 import java.net.URI;
 import java.util.List;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.alura.forum.controller.dto.ServicoDto;
-import br.com.alura.forum.controller.form.ServicoForm;
-import br.com.alura.forum.modelo.Servico;
-import br.com.alura.forum.repository.ServicoRepository;
+import br.com.utiauto.controller.dto.ServicoDto;
+import br.com.utiauto.controller.form.ServicoForm;
+import br.com.utiauto.modelo.Servico;
+import br.com.utiauto.repository.ServicoRepository;
 
 @RestController
 @RequestMapping("/servicos")
@@ -38,7 +40,7 @@ public class ServicosController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<ServicoDto> cadastrar(@RequestBody ServicoForm form, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<ServicoDto> cadastrar(@RequestBody @Valid ServicoForm form, UriComponentsBuilder uriBuilder) {
 		Servico servico = form.converter();
 		servicoRepository.save(servico);
 		URI uri = uriBuilder.path("/servicos/{id}").buildAndExpand(servico.getId()).toUri();

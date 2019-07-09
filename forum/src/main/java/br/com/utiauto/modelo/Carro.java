@@ -1,4 +1,4 @@
-package br.com.alura.forum.modelo;
+package br.com.utiauto.modelo;
 
 import java.time.LocalDateTime;
 
@@ -14,17 +14,13 @@ public class Carro {
 	public Carro() {
 	}
 	
-
-	
-	public Carro(String modelo, int ano, String marca, Long renavam, String cor, String placa,
-			LocalDateTime dataCriacao) {
+	public Carro(String modelo, int ano, String marca, Long renavam, String cor, String placa) {
 		this.modelo = modelo;
 		this.ano = ano;
 		this.marca = marca;
 		this.renavam = renavam;
 		this.cor = cor;
 		this.placa = placa;
-		this.dataCriacao = dataCriacao;
 	}
 
 

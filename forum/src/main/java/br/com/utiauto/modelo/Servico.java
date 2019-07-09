@@ -1,4 +1,4 @@
-package br.com.alura.forum.modelo;
+package br.com.utiauto.modelo;
 
 import java.time.LocalDateTime;
 
@@ -7,20 +7,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
-public class Resposta {
-	
+public class Servico {
+
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String mensagem;
-	@ManyToOne
-	private Topico topico;
+	
+	private String nomeServico;
+	private String iconeServico;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
-	@ManyToOne
-	private Usuario autor;
-	private Boolean solucao = false;
+
+	
+	public Servico() {
+	}
+	
+	public Servico(String nomeServico, String iconeServico) {
+		this.nomeServico = nomeServico;
+		this.iconeServico = iconeServico;
+	}
+	
 
 	@Override
 	public int hashCode() {
@@ -38,7 +44,7 @@ public class Resposta {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Resposta other = (Resposta) obj;
+		Servico other = (Servico) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -46,7 +52,8 @@ public class Resposta {
 			return false;
 		return true;
 	}
-
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -55,20 +62,12 @@ public class Resposta {
 		this.id = id;
 	}
 
-	public String getMensagem() {
-		return mensagem;
+	public String getNomeServico() {
+		return nomeServico;
 	}
 
-	public void setMensagem(String mensagem) {
-		this.mensagem = mensagem;
-	}
-
-	public Topico getTopico() {
-		return topico;
-	}
-
-	public void setTopico(Topico topico) {
-		this.topico = topico;
+	public void setNomeServico(String nomeServico) {
+		this.nomeServico = nomeServico;
 	}
 
 	public LocalDateTime getDataCriacao() {
@@ -79,20 +78,14 @@ public class Resposta {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public Usuario getAutor() {
-		return autor;
+	public String getIconeServico() {
+		return iconeServico;
 	}
 
-	public void setAutor(Usuario autor) {
-		this.autor = autor;
+	public void setIconeServico(String iconeServico) {
+		this.iconeServico = iconeServico;
 	}
 
-	public Boolean getSolucao() {
-		return solucao;
-	}
 
-	public void setSolucao(Boolean solucao) {
-		this.solucao = solucao;
-	}
-
+	
 }

@@ -1,4 +1,4 @@
-package br.com.alura.forum.modelo;
+package br.com.utiauto.modelo;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

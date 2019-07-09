@@ -1,9 +1,9 @@
-package br.com.alura.forum.controller.dto;
+package br.com.utiauto.controller.dto;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.alura.forum.modelo.Servico;
+import br.com.utiauto.modelo.Servico;
 
 public class ServicoDto {
 	

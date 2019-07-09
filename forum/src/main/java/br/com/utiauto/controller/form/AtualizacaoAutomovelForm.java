@@ -5,10 +5,12 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
-import br.com.utiauto.modelo.Carro;
-import br.com.utiauto.modelo.Servico;
+import br.com.utiauto.modelo.Automovel;
+import br.com.utiauto.modelo.Topico;
+import br.com.utiauto.repository.AutomovelRepository;
 
-public class CarroForm {
+public class AtualizacaoAutomovelForm {
+	
 	
 	@NotNull @NotEmpty @Length(min = 1)
 	private String modelo;
@@ -28,45 +30,66 @@ public class CarroForm {
 	@NotNull @NotEmpty @Length(max = 7, min = 7)
 	private String placa;
 	
-	
 	public String getModelo() {
 		return modelo;
 	}
+
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
+
 	public int getAno() {
 		return ano;
 	}
+
 	public void setAno(int ano) {
 		this.ano = ano;
 	}
+
 	public String getMarca() {
 		return marca;
 	}
+
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
+
 	public Long getRenavam() {
 		return renavam;
 	}
+
 	public void setRenavam(Long renavam) {
 		this.renavam = renavam;
 	}
+
 	public String getCor() {
 		return cor;
 	}
+
 	public void setCor(String cor) {
 		this.cor = cor;
 	}
+
 	public String getPlaca() {
 		return placa;
 	}
+
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
-	public Carro converter() {
-		return new Carro(modelo, ano, marca, renavam, cor, placa);
+	
+	public Automovel atualizar(Long id, AutomovelRepository carroRepository) {
+		Automovel carro = carroRepository.getOne(id);
+		carro.setAno(this.ano);
+		carro.setCor(this.cor);
+		carro.setMarca(this.marca);
+		carro.setModelo(this.modelo);
+		carro.setPlaca(this.placa);
+		carro.setRenavam(this.renavam);
+		return carro;
 	}
+	
+	
+	
 
 }

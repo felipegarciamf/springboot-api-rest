@@ -1,38 +1,34 @@
-package br.com.utiauto.controller.dto;
+package br.com.utiauto.controller.form;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
-import br.com.utiauto.modelo.Carro;
+import org.hibernate.validator.constraints.Length;
 
-public class CarroDto {
+import br.com.utiauto.modelo.Automovel;
+import br.com.utiauto.modelo.Servico;
 
-	private Long id;
+public class AutomovelForm {
+	
+	@NotNull @NotEmpty @Length(min = 1)
 	private String modelo;
+	
+	@NotNull @NotEmpty @Length(max = 4, min = 4)
 	private int ano;
+	
+	@NotNull @NotEmpty
 	private String marca;
+	
+	@NotNull @NotEmpty @Length(max = 10, min = 10)
 	private Long renavam;
+	
+	@NotNull @NotEmpty
 	private String cor;
+	
+	@NotNull @NotEmpty @Length(max = 7, min = 7)
 	private String placa;
 	
 	
-	public CarroDto(Carro carro) {
-		this.id = carro.getId();
-		this.modelo = carro.getModelo();
-		this.ano = carro.getAno();
-		this.marca = carro.getMarca();
-		this.renavam = carro.getRenavam();
-		this.cor = carro.getCor();
-		this.placa = carro.getPlaca();
-	}
-	
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getModelo() {
 		return modelo;
 	}
@@ -69,9 +65,8 @@ public class CarroDto {
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
-	
-	public static List<CarroDto> converter(List<Carro> carro) {
-		return carro.stream().map(CarroDto::new).collect(Collectors.toList());
+	public Automovel converter() {
+		return new Automovel(modelo, ano, marca, renavam, cor, placa);
 	}
-	
+
 }

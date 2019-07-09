@@ -8,13 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Carro {
+public class Automovel {
 	
 	
-	public Carro() {
+	public Automovel() {
 	}
 	
-	public Carro(String modelo, int ano, String marca, Long renavam, String cor, String placa) {
+	public Automovel(String modelo, int ano, String marca, Long renavam, String cor, String placa) {
 		this.modelo = modelo;
 		this.ano = ano;
 		this.marca = marca;
@@ -56,7 +56,7 @@ public class Carro {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Carro other = (Carro) obj;
+		Automovel other = (Automovel) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

@@ -11,4 +11,4 @@ INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Mecânico', 'icon ion-
 INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Eletricista', 'icon ion-flash');
 INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Chaveiro', 'icon ion-key');
 
-INSERT INTO CARRO(modelo, ano, marca, renavam, cor, placa) VALUES ('ONIX LTZ', 2018, 'CHEVROLET', 46516156, 'PRETO', 'FFE-0021');
+INSERT INTO AUTOMOVEL(modelo, ano, marca, renavam, cor, placa) VALUES ('ONIX LTZ', 2018, 'CHEVROLET', 46516156, 'PRETO', 'FFE-0021');

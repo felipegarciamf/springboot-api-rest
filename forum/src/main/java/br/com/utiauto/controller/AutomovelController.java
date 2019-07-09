@@ -20,42 +20,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.utiauto.controller.dto.CarroDto;
+import br.com.utiauto.controller.dto.AutomovelDto;
 import br.com.utiauto.controller.dto.DetalhesDoCarroDto;
-import br.com.utiauto.controller.form.AtualizacaoCarroForm;
-import br.com.utiauto.controller.form.CarroForm;
-import br.com.utiauto.modelo.Carro;
+import br.com.utiauto.controller.form.AtualizacaoAutomovelForm;
+import br.com.utiauto.controller.form.AutomovelForm;
+import br.com.utiauto.modelo.Automovel;
 import br.com.utiauto.modelo.Topico;
-import br.com.utiauto.repository.CarroRepository;
+import br.com.utiauto.repository.AutomovelRepository;
 
 @RestController
-@RequestMapping("/carro")
-public class CarroController {
+@RequestMapping("/automovel")
+public class AutomovelController {
 	
 	@Autowired
-	private CarroRepository carroRepository;
+	private AutomovelRepository carroRepository;
 	
 	
 	@CrossOrigin
 	@GetMapping
-	public List<CarroDto> carro(Long id) {
-		List<Carro> carro;
+	public List<AutomovelDto> carro(Long id) {
+		List<Automovel> carro;
 		carro = carroRepository.findAll();
-		return CarroDto.converter(carro);
+		return AutomovelDto.converter(carro);
 	}
 	
 	@PostMapping
 	@Transactional
-	public ResponseEntity<CarroDto> cadastrar(@RequestBody @Valid CarroForm form, UriComponentsBuilder uriBuilder) {
-		Carro carro = form.converter();
+	public ResponseEntity<AutomovelDto> cadastrar(@RequestBody @Valid AutomovelForm form, UriComponentsBuilder uriBuilder) {
+		Automovel carro = form.converter();
 		carroRepository.save(carro);
 		URI uri = uriBuilder.path("/carro/{id}").buildAndExpand(carro.getId()).toUri();
-		return ResponseEntity.created(uri).body(new CarroDto(carro));
+		return ResponseEntity.created(uri).body(new AutomovelDto(carro));
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<DetalhesDoCarroDto> detalhar(@PathVariable Long id) {
-		Optional<Carro> carro = carroRepository.findById(id);
+		Optional<Automovel> carro = carroRepository.findById(id);
 		if (carro.isPresent()) {
 			return ResponseEntity.ok(new DetalhesDoCarroDto(carro.get()));
 		}
@@ -65,12 +65,12 @@ public class CarroController {
 	
 	@PutMapping("/{id}")
 	@Transactional
-	public ResponseEntity<CarroDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizacaoCarroForm form){
+	public ResponseEntity<AutomovelDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizacaoAutomovelForm form){
 		
-		Optional<Carro> optional = carroRepository.findById(id);
+		Optional<Automovel> optional = carroRepository.findById(id);
 		if (optional.isPresent()) {
-			Carro carro = form.atualizar(id, carroRepository);
-			return ResponseEntity.ok(new CarroDto(carro));
+			Automovel carro = form.atualizar(id, carroRepository);
+			return ResponseEntity.ok(new AutomovelDto(carro));
 		}
 		return ResponseEntity.notFound().build();	
 	}
@@ -78,7 +78,7 @@ public class CarroController {
 	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity<?> remover(@PathVariable Long id){
-		Optional<Carro> optional = carroRepository.findById(id);
+		Optional<Automovel> optional = carroRepository.findById(id);
 		if (optional.isPresent()) {
 			carroRepository.deleteById(id);
 			return ResponseEntity.ok().build();

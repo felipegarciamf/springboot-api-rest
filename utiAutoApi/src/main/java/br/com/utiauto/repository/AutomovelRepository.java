@@ -6,6 +6,4 @@ import br.com.utiauto.modelo.Automovel;
 
 public interface AutomovelRepository extends JpaRepository<Automovel, Long> {
 
-	
-
 }

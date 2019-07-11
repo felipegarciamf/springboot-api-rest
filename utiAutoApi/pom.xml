@@ -8,11 +8,11 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.alura</groupId>
-	<artifactId>forum</artifactId>
+	<groupId>br.com.utiauto</groupId>
+	<artifactId>utiAuto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>forum</name>
-	<description>Demo project for Spring Boot</description>
+	<name>utiAuto</name>
+	<description>Projeto UtiAuto Api Rest</description>
 
 	<properties>
 		<java.version>1.8</java.version>

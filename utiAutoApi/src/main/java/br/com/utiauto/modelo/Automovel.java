@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Automovel {
@@ -34,6 +35,9 @@ public class Automovel {
 	private Long renavam;
 	private String cor;
 	private String placa;
+	
+	@OneToOne
+	private Usuario usuario;
 	
 	
 	
@@ -160,6 +164,16 @@ public class Automovel {
 	public void setDataCriacao(LocalDateTime dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	
 
 	
 	

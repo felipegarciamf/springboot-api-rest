@@ -22,10 +22,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.utiauto.controller.dto.AutomovelDto;
 import br.com.utiauto.controller.dto.DetalhesDoCarroDto;
+import br.com.utiauto.controller.dto.UsuarioDto;
 import br.com.utiauto.controller.form.AtualizacaoAutomovelForm;
 import br.com.utiauto.controller.form.AutomovelForm;
 import br.com.utiauto.modelo.Automovel;
 import br.com.utiauto.modelo.Topico;
+import br.com.utiauto.modelo.Usuario;
 import br.com.utiauto.repository.AutomovelRepository;
 
 @RestController
@@ -43,6 +45,7 @@ public class AutomovelController {
 		carro = carroRepository.findAll();
 		return AutomovelDto.converter(carro);
 	}
+	
 	
 	@PostMapping
 	@Transactional

@@ -1,12 +1,12 @@
 package br.com.utiauto.modelo;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Usuario {
@@ -19,12 +19,14 @@ public class Usuario {
 	private Long rg;
 	private String dataNascimento;
 	private String email;
-	
 	private String senha;
 	private Long telefone; 
 	private Long celular;
 	private Long cnh;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
+	
+	@OneToOne(mappedBy="usuario")
+	private Automovel automovel;
 
 	public Usuario() {
 	}
@@ -164,6 +166,17 @@ public class Usuario {
 		this.dataCriacao = dataCriacao;
 	}
 
+	public Automovel getAutomovel() {
+		return automovel;
+	}
+
+	public void setAutomovel(Automovel automovel) {
+		this.automovel = automovel;
+	}
+
+	public void setCnh(Long cnh) {
+		this.cnh = cnh;
+	}
 
 
 }

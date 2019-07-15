@@ -13,33 +13,32 @@ import br.com.utiauto.repository.UsuarioRepository;
 
 public class UsuarioForm {
 	
-	@NotNull @NotEmpty
+
 	private String nome;
 	
-	@NotNull @NotEmpty
+
 	private String sobrenome;
+
+	private String cpf;
 	
-	@NotNull @NotEmpty @Length(max = 11, min = 11)
-	private long cpf;
+
+	private String rg;
 	
-	@NotNull @NotEmpty @Length(max = 1, min = 9)
-	private long rg;
-	
-	@NotNull @NotEmpty @Length(max = 10, min = 10)
+
 	private String dataNascimento;
 	
-	@NotNull @NotEmpty
+
 	private String email;
 	
-	@NotNull @NotEmpty
+
 	private String senha;
 	
-	@NotNull @NotEmpty
-	private long telefone; 
-	@NotNull @NotEmpty
-	private long celular;
-	@NotNull @NotEmpty
-	private long cnh;
+
+	private String telefone; 
+
+	private String celular;
+
+	private String cnh;
 	
 	
 	
@@ -55,16 +54,16 @@ public class UsuarioForm {
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-	public long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public long getRg() {
+	public String getRg() {
 		return rg;
 	}
-	public void setRg(long rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
 	public String getDataNascimento() {
@@ -85,22 +84,22 @@ public class UsuarioForm {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(long telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public long getCelular() {
+	public String getCelular() {
 		return celular;
 	}
-	public void setCelular(long celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-	public long getCnh() {
+	public String getCnh() {
 		return cnh;
 	}
-	public void setCnh(long cnh) {
+	public void setCnh(String cnh) {
 		this.cnh = cnh;
 	}
 	

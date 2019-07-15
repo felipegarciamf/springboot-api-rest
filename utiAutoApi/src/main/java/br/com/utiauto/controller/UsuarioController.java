@@ -48,6 +48,8 @@ public class UsuarioController {
 		return UsuarioDto.converter(usuario);
 	}
 	
+	
+	@CrossOrigin
 	@PostMapping
 	@Transactional
 	public ResponseEntity<UsuarioDto> casdastrar(@RequestBody @Valid UsuarioForm form, UriComponentsBuilder uriBuilder) {
@@ -57,7 +59,7 @@ public class UsuarioController {
 		return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
 	}
 	
-	
+	@CrossOrigin
 	@GetMapping("/{id}")
 	public ResponseEntity<DetalhesDoUsuarioDto> detalhar(@PathVariable Long id) {
 		Optional<Usuario> usuario= usuarioRepository.findById(id);
@@ -67,7 +69,7 @@ public class UsuarioController {
 		return ResponseEntity.notFound().build();		
 	}
 	
-	
+	@CrossOrigin
 	@PutMapping("/{id}")
 	@Transactional
 	public ResponseEntity<UsuarioDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizacaoUsuarioForm form){
@@ -79,7 +81,7 @@ public class UsuarioController {
 		return ResponseEntity.notFound().build();	
 	}
 	
-	
+	@CrossOrigin
 	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity<?> remover(@PathVariable Long id){

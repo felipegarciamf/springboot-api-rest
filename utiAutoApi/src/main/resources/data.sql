@@ -1,4 +1,12 @@
+INSERT INTO TIPO_USUARIO(descricao) VALUES ('mecanico');
 INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Sileira', 'Garcia', 40173586830, 49383012, '03/12/1989', 'teste@gmail.com', 11968613451, 199565959, '45645664', 'teste123');
+INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha, tipo_usuario_id) VALUES('Vanderlei', 'Silva', 40173586830, 49383012, '03/12/1989', 'teste@gmail.com', 11968613451, 199565959, '45645664', 'teste123', 1);
+INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha, tipo_usuario_id) VALUES('Vanderlei', 'Silva', 40173586830, 49383012, '03/12/1989', 'teste@gmail.com', 11968613451, 199565959, '45645664', 'teste123', 1);
+INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha, tipo_usuario_id) VALUES('Vanderlei', 'Silva', 40173586830, 49383012, '03/12/1989', 'teste@gmail.com', 11968613451, 199565959, '45645664', 'teste123', 1);
+INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha, tipo_usuario_id) VALUES('Vanderlei', 'Silva', 40173586830, 49383012, '03/12/1989', 'teste@gmail.com', 11968613451, 199565959, '45645664', 'teste123', 1);
+INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha, tipo_usuario_id) VALUES('Vanderlei', 'Silva', 40173586830, 49383012, '03/12/1989', 'teste@gmail.com', 11968613451, 199565959, '45645664', 'teste123', 1);
+INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha, tipo_usuario_id) VALUES('Vanderlei', 'Silva', 40173586830, 49383012, '03/12/1989', 'teste@gmail.com', 11968613451, 199565959, '45645664', 'teste123', 1);
+
 
 INSERT INTO CURSO(nome, categoria) VALUES('Spring boot', 'Programação');
 INSERT INTO CURSO(nome, categoria) VALUES('Html5', 'Front-end');
@@ -12,3 +20,7 @@ INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Eletricista', 'icon io
 INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Chaveiro', 'icon ion-key');
 
 INSERT INTO AUTOMOVEL(modelo, ano, marca, renavam, cor, placa) VALUES ('ONIX LTZ', 2018, 'CHEVROLET', 46516156, 'PRETO', 'FFE-0021');
+
+
+
+

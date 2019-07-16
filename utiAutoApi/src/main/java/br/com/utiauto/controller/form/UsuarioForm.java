@@ -1,15 +1,7 @@
 package br.com.utiauto.controller.form;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Length;
-
-import br.com.utiauto.modelo.Curso;
-import br.com.utiauto.modelo.Topico;
+import br.com.utiauto.modelo.TipoUsuario;
 import br.com.utiauto.modelo.Usuario;
-import br.com.utiauto.repository.CursoRepository;
-import br.com.utiauto.repository.UsuarioRepository;
 
 public class UsuarioForm {
 	
@@ -39,6 +31,8 @@ public class UsuarioForm {
 	private String celular;
 
 	private String cnh;
+	
+	private TipoUsuario tipoUsuario;
 	
 	
 	
@@ -104,7 +98,7 @@ public class UsuarioForm {
 	}
 	
 	public Usuario converter() {
-		return new Usuario(nome, sobrenome, cpf, rg, dataNascimento, email, senha, telefone, celular, cnh);
+		return new Usuario(nome, sobrenome, cpf, rg, dataNascimento, email, senha, telefone, celular, cnh, tipoUsuario);
 	}
  
 	

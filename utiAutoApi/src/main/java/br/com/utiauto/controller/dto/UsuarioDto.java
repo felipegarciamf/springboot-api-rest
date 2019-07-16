@@ -18,6 +18,7 @@ public class UsuarioDto {
 	private String celular;
 	private String cnh;
 	
+	
 	public UsuarioDto(Usuario usuario) {
 		this.id = usuario.getId();
 		this.nome = usuario.getNome();

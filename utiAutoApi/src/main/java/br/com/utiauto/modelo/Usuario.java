@@ -25,6 +25,10 @@ public class Usuario {
 	private String cnh;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 	
+	@OneToOne
+	private TipoUsuario tipoUsuario;
+
+
 	@OneToOne(mappedBy="usuario")
 	private Automovel automovel;
 
@@ -32,7 +36,7 @@ public class Usuario {
 	}
 	
 	public Usuario(String nome, String sobrenome, String cpf, String rg, String dataNascimento, String email,
-			String senha, String telefone, String celular, String cnh) {
+			String senha, String telefone, String celular, String cnh, TipoUsuario tipoUsuario) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.cpf = cpf;
@@ -43,6 +47,7 @@ public class Usuario {
 		this.telefone = telefone;
 		this.celular = celular;
 		this.cnh = cnh;
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	@Override
@@ -174,6 +179,12 @@ public class Usuario {
 		this.automovel = automovel;
 	}
 
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
 
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
 
 }

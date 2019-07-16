@@ -1,6 +1,5 @@
 package br.com.utiauto.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.utiauto.controller.dto.LoginDto;
-import br.com.utiauto.controller.dto.ServicoDto;
 import br.com.utiauto.controller.dto.UsuarioDto;
 import br.com.utiauto.modelo.Usuario;
 import br.com.utiauto.repository.UsuarioRepository;

@@ -21,14 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.utiauto.controller.dto.DetalhesDoServicoDto;
-import br.com.utiauto.controller.dto.DetalhesDoTopicoDto;
 import br.com.utiauto.controller.dto.ServicoDto;
-import br.com.utiauto.controller.dto.TopicoDto;
 import br.com.utiauto.controller.form.AtualizacaoServicoForm;
-import br.com.utiauto.controller.form.AtualizacaoTopicoForm;
 import br.com.utiauto.controller.form.ServicoForm;
 import br.com.utiauto.modelo.Servico;
-import br.com.utiauto.modelo.Topico;
 import br.com.utiauto.repository.ServicoRepository;
 
 @RestController

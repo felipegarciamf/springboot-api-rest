@@ -21,11 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.utiauto.controller.dto.DetalhesDoUsuarioDto;
-import br.com.utiauto.controller.dto.ServicoDto;
 import br.com.utiauto.controller.dto.UsuarioDto;
 import br.com.utiauto.controller.form.AtualizacaoUsuarioForm;
 import br.com.utiauto.controller.form.UsuarioForm;
-import br.com.utiauto.modelo.Servico;
 import br.com.utiauto.modelo.Usuario;
 import br.com.utiauto.repository.UsuarioRepository;
 

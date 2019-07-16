@@ -2,7 +2,6 @@ package br.com.utiauto.controller;
 
 
 import java.net.URI;
-import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;

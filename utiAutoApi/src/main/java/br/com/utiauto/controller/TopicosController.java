@@ -43,7 +43,7 @@ public class TopicosController {
 	
 	@GetMapping
 	public Page<TopicoDto> lista(@RequestParam(required=false) String nomeCurso, 
-			@RequestParam int pagina, @RequestParam int qtd) {	
+			@RequestParam int pagina, @RequestParam int qtd, @RequestParam String ordenacao) {	
 		
 		Pageable paginacao = PageRequest.of(pagina, qtd);
 		

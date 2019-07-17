@@ -44,7 +44,12 @@ public class PrestadorDeServicoController {
 	@GetMapping
 	public List<PrestadorDeServicoDto> lista(String descricao) {	
 		List<Usuario> usuario;
-		usuario = prestadorDeServicoRepository.findByTipoUsuario_Descricao(descricao); 
+		
+		if(descricao == null) {
+			usuario = prestadorDeServicoRepository.findByTipoUsuarioNotNull(); 
+		} else {
+			usuario = prestadorDeServicoRepository.findByTipoUsuario_Descricao(descricao); 
+		}
 		return PrestadorDeServicoDto.converter(usuario);
 	}
 	

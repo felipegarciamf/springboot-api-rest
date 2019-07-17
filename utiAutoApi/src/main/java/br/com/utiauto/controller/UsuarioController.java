@@ -8,6 +8,8 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -36,6 +38,7 @@ public class UsuarioController {
 	
 	@CrossOrigin
 	@GetMapping
+	@Cacheable(value = "listaDeUsuarios")
 	public List<UsuarioDto> lista(String nome) {	
 		List<Usuario> usuario;
 		if(nome == null) {
@@ -50,6 +53,7 @@ public class UsuarioController {
 	@CrossOrigin
 	@PostMapping
 	@Transactional
+	@CacheEvict(value = "listaDeUsuarios", allEntries = true)
 	public ResponseEntity<UsuarioDto> casdastrar(@RequestBody @Valid UsuarioForm form, UriComponentsBuilder uriBuilder) {
 		Usuario usuario = form.converter();
 		usuarioRepository.save(usuario);

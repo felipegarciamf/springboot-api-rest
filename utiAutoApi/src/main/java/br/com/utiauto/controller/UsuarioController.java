@@ -21,11 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.utiauto.controller.dto.DetalhesDoUsuarioDto;
-import br.com.utiauto.controller.dto.ServicoDto;
 import br.com.utiauto.controller.dto.UsuarioDto;
 import br.com.utiauto.controller.form.AtualizacaoUsuarioForm;
 import br.com.utiauto.controller.form.UsuarioForm;
-import br.com.utiauto.modelo.Servico;
 import br.com.utiauto.modelo.Usuario;
 import br.com.utiauto.repository.UsuarioRepository;
 
@@ -41,13 +39,15 @@ public class UsuarioController {
 	public List<UsuarioDto> lista(String nome) {	
 		List<Usuario> usuario;
 		if(nome == null) {
-			usuario = usuarioRepository.findAll(); 
+			usuario = usuarioRepository.findByTipoUsuarioComum(); 
 		} else {
 			usuario = usuarioRepository.findByNome(nome);
 		}
 		return UsuarioDto.converter(usuario);
 	}
 	
+	
+	@CrossOrigin
 	@PostMapping
 	@Transactional
 	public ResponseEntity<UsuarioDto> casdastrar(@RequestBody @Valid UsuarioForm form, UriComponentsBuilder uriBuilder) {
@@ -57,7 +57,7 @@ public class UsuarioController {
 		return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
 	}
 	
-	
+	@CrossOrigin
 	@GetMapping("/{id}")
 	public ResponseEntity<DetalhesDoUsuarioDto> detalhar(@PathVariable Long id) {
 		Optional<Usuario> usuario= usuarioRepository.findById(id);
@@ -67,7 +67,7 @@ public class UsuarioController {
 		return ResponseEntity.notFound().build();		
 	}
 	
-	
+	@CrossOrigin
 	@PutMapping("/{id}")
 	@Transactional
 	public ResponseEntity<UsuarioDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizacaoUsuarioForm form){
@@ -79,7 +79,7 @@ public class UsuarioController {
 		return ResponseEntity.notFound().build();	
 	}
 	
-	
+	@CrossOrigin
 	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity<?> remover(@PathVariable Long id){

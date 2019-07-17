@@ -8,8 +8,8 @@ public class DetalhesDoUsuarioDto {
 	private String sobrenome;
 	private String dataNascimento;
 	private String email;
-	private Long celular;
-	private Long cnh;
+	private String celular;
+	private String cnh;
 	
 
 	public DetalhesDoUsuarioDto(Usuario usuario) {
@@ -34,10 +34,10 @@ public class DetalhesDoUsuarioDto {
 	public String getEmail() {
 		return email;
 	}
-	public Long getCelular() {
+	public String getCelular() {
 		return celular;
 	}
-	public Long getCnh() {
+	public String getCnh() {
 		return cnh;
 	}
 	

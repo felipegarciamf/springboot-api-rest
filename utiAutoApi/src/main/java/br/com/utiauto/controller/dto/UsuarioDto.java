@@ -7,18 +7,20 @@ import br.com.utiauto.modelo.Usuario;
 
 public class UsuarioDto {
 	
-	
+	private Long id;
 	private String nome;
 	private String sobrenome;
-	private long cpf;
-	private long rg;
+	private String cpf;
+	private String rg;
 	private String dataNascimento;
 	private String email;
-	private long telefone; 
-	private long celular;
-	private long cnh;
+	private String telefone; 
+	private String celular;
+	private String cnh;
+	
 	
 	public UsuarioDto(Usuario usuario) {
+		this.id = usuario.getId();
 		this.nome = usuario.getNome();
 		this.sobrenome = usuario.getSobrenome();
 		this.cpf = usuario.getCpf();
@@ -63,7 +65,7 @@ public class UsuarioDto {
 
 
 
-	public long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
@@ -71,7 +73,7 @@ public class UsuarioDto {
 
 
 
-	public void setCpf(long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -79,7 +81,7 @@ public class UsuarioDto {
 
 
 
-	public long getRg() {
+	public String getRg() {
 		return rg;
 	}
 
@@ -87,7 +89,7 @@ public class UsuarioDto {
 
 
 
-	public void setRg(long rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
 
@@ -127,7 +129,7 @@ public class UsuarioDto {
 
 
 
-	public long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
@@ -135,7 +137,7 @@ public class UsuarioDto {
 
 
 
-	public void setTelefone(long telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
@@ -143,7 +145,7 @@ public class UsuarioDto {
 
 
 
-	public long getCelular() {
+	public String getCelular() {
 		return celular;
 	}
 
@@ -151,7 +153,7 @@ public class UsuarioDto {
 
 
 
-	public void setCelular(long celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 
@@ -159,7 +161,7 @@ public class UsuarioDto {
 
 
 
-	public long getCnh() {
+	public String getCnh() {
 		return cnh;
 	}
 
@@ -167,8 +169,13 @@ public class UsuarioDto {
 
 
 
-	public void setCnh(long cnh) {
+	public void setCnh(String cnh) {
 		this.cnh = cnh;
+	}
+	
+	
+	public Long getId() {
+		return id;
 	}
 
 

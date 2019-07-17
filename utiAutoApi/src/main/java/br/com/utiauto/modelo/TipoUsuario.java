@@ -6,21 +6,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+
 
 @Entity
-public class Resposta {
+public class TipoUsuario {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String mensagem;
-	@ManyToOne
-	private Topico topico;
+	private String descricao;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
-	@ManyToOne
-	private Usuario autor;
-	private Boolean solucao = false;
-
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -37,7 +33,7 @@ public class Resposta {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Resposta other = (Resposta) obj;
+		TipoUsuario other = (TipoUsuario) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -45,53 +41,25 @@ public class Resposta {
 			return false;
 		return true;
 	}
-
+	
+	
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getMensagem() {
-		return mensagem;
+	public String getDescricao() {
+		return descricao;
 	}
-
-	public void setMensagem(String mensagem) {
-		this.mensagem = mensagem;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-
-	public Topico getTopico() {
-		return topico;
-	}
-
-	public void setTopico(Topico topico) {
-		this.topico = topico;
-	}
-
 	public LocalDateTime getDataCriacao() {
 		return dataCriacao;
 	}
-
 	public void setDataCriacao(LocalDateTime dataCriacao) {
 		this.dataCriacao = dataCriacao;
-	}
-
-	public Usuario getAutor() {
-		return autor;
-	}
-
-	public void setAutor(Usuario autor) {
-		this.autor = autor;
-	}
-
-	public Boolean getSolucao() {
-		return solucao;
-	}
-
-	public void setSolucao(Boolean solucao) {
-		this.solucao = solucao;
 	}
 
 }

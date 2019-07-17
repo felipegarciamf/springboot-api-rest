@@ -10,16 +10,17 @@ import org.springframework.data.repository.query.Param;
 import br.com.utiauto.modelo.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+	
+	
+	@Query("SELECT t FROM Usuario t WHERE t.tipoUsuario = 1 AND t.nome = :nome")
+	List<Usuario> findByNome(@Param("nome") String nome);
 
-	List<Usuario> findByNome(String nome);
-
-	/** Query com JPQL
-	@Query("SELECT t FROM topico t WHERE t.curso.nome = :nomeCurso")
-	List<Topico> carregarPorNomeDoCurso(@Param("nomeCurso") String nomeCurso);
-	*/
-	@Query("SELECT t FROM Usuario t WHERE t.email = :email AND t.senha = :senha")
+	@Query("SELECT t FROM Usuario t WHERE t.tipoUsuario = 1 AND t.email = :email AND t.senha = :senha")
 	Optional<Usuario> findByEmailSenha(@Param("email") String email, @Param("senha") String senha);
 
 	Usuario findByEmail(String email);
+
+	@Query("SELECT t FROM Usuario t WHERE t.tipoUsuario = 1")
+	List<Usuario> findByTipoUsuarioComum();
 
 }

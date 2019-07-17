@@ -15,24 +15,28 @@ public class Usuario {
 	private Long id;
 	private String nome;
 	private String sobrenome;
-	private Long cpf;
-	private Long rg;
+	private String cpf;
+	private String rg;
 	private String dataNascimento;
 	private String email;
 	private String senha;
-	private Long telefone; 
-	private Long celular;
-	private Long cnh;
+	private String telefone; 
+	private String celular;
+	private String cnh;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 	
+	@OneToOne
+	private TipoUsuario tipoUsuario;
+
+
 	@OneToOne(mappedBy="usuario")
 	private Automovel automovel;
 
 	public Usuario() {
 	}
 	
-	public Usuario(String nome, String sobrenome, Long cpf, Long rg, String dataNascimento, String email,
-			String senha, Long telefone, Long celular, Long cnh) {
+	public Usuario(String nome, String sobrenome, String cpf, String rg, String dataNascimento, String email,
+			String senha, String telefone, String celular, String cnh, TipoUsuario tipoUsuario) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.cpf = cpf;
@@ -43,6 +47,7 @@ public class Usuario {
 		this.telefone = telefone;
 		this.celular = celular;
 		this.cnh = cnh;
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	@Override
@@ -94,19 +99,19 @@ public class Usuario {
 		this.sobrenome = sobrenome;
 	}
 
-	public Long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-	public Long getRg() {
+	public String getRg() {
 		return rg;
 	}
 
-	public void setRg(Long rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
 
@@ -134,27 +139,27 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Long telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
-	public Long getCelular() {
+	public String getCelular() {
 		return celular;
 	}
 
-	public void setCelular(Long celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 
-	public Long getCnh() {
+	public String getCnh() {
 		return cnh;
 	}
 
-	public void setCnh(long cnh) {
+	public void setCnh(String cnh) {
 		this.cnh = cnh;
 	}
 
@@ -174,9 +179,12 @@ public class Usuario {
 		this.automovel = automovel;
 	}
 
-	public void setCnh(Long cnh) {
-		this.cnh = cnh;
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
 	}
 
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
 
 }

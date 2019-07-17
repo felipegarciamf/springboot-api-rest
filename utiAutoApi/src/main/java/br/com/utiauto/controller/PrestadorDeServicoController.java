@@ -8,6 +8,8 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -42,6 +44,7 @@ public class PrestadorDeServicoController {
 	
 	@CrossOrigin
 	@GetMapping
+	@Cacheable(value = "listaDePrestadorDeServico")
 	public List<PrestadorDeServicoDto> lista(String descricao) {	
 		List<Usuario> usuario;
 		
@@ -57,6 +60,7 @@ public class PrestadorDeServicoController {
 	@CrossOrigin
 	@PostMapping
 	@Transactional
+	@CacheEvict(value = "listaDePrestadorDeServico", allEntries = true)
 	public ResponseEntity<PrestadorDeServicoDto> cadastrar(@RequestBody @Valid PrestadorDeServicoForm form, UriComponentsBuilder uriBuilder) {
 		Usuario usuario = form.converter(tipoUsuarioRepository);
 		prestadorDeServicoRepository.save(usuario);
@@ -68,6 +72,7 @@ public class PrestadorDeServicoController {
 	@CrossOrigin
 	@PutMapping("/{id}")
 	@Transactional
+	@CacheEvict(value = "listaDePrestadorDeServico", allEntries = true)
 	public ResponseEntity<PrestadorDeServicoDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizacaoPrestadorDeServicoForm form){
 		Optional<Usuario> optional = prestadorDeServicoRepository.findById(id);
 		if (optional.isPresent()) {
@@ -91,6 +96,7 @@ public class PrestadorDeServicoController {
 	@CrossOrigin
 	@DeleteMapping("/{id}")
 	@Transactional
+	@CacheEvict(value = "listaDePrestadorDeServico", allEntries = true)
 	public ResponseEntity<?> remover(@PathVariable Long id){
 		Optional<Usuario> optional = prestadorDeServicoRepository.findById(id);
 		if (optional.isPresent()) {

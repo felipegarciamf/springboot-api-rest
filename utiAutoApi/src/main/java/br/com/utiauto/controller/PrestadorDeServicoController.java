@@ -46,7 +46,7 @@ public class PrestadorDeServicoController {
 		List<Usuario> usuario;
 		
 		if(descricao == null) {
-			usuario = prestadorDeServicoRepository.findByTipoUsuarioNotNull(); 
+			usuario = prestadorDeServicoRepository.findByTipoUsuarioPrestadorDeServico(); 
 		} else {
 			usuario = prestadorDeServicoRepository.findByTipoUsuario_Descricao(descricao); 
 		}

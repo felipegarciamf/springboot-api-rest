@@ -13,6 +13,6 @@ public interface PrestadorDeServicoRepository extends JpaRepository<Usuario, Lon
 
 	
 	@Query("SELECT t FROM Usuario t WHERE t.tipoUsuario <> 1")
-	List<Usuario> findByTipoUsuarioNotNull();
+	List<Usuario> findByTipoUsuarioPrestadorDeServico();
 	
 }

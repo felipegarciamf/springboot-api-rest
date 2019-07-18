@@ -1,6 +1,8 @@
 package br.com.utiauto.controller.form;
 
-import br.com.utiauto.modelo.TipoUsuario;
+import java.util.List;
+
+import br.com.utiauto.modelo.Perfil;
 import br.com.utiauto.modelo.Usuario;
 
 public class UsuarioForm {
@@ -28,11 +30,26 @@ public class UsuarioForm {
 
 	private String telefone; 
 
+	/**
+	 * @return the perfil
+	 */
+	public List<Perfil> getPerfil() {
+		return perfil;
+	}
+	/**
+	 * @param perfil the perfil to set
+	 */
+	public void setPerfil(List<Perfil> perfil) {
+		this.perfil = perfil;
+	}
+
 	private String celular;
 
 	private String cnh;
 	
-	private TipoUsuario tipoUsuario;
+	private List<Perfil> perfil;
+	
+	
 	
 	
 	
@@ -98,7 +115,7 @@ public class UsuarioForm {
 	}
 	
 	public Usuario converter() {
-		return new Usuario(nome, sobrenome, cpf, rg, dataNascimento, email, senha, telefone, celular, cnh, tipoUsuario);
+		return new Usuario(nome, sobrenome, cpf, rg, dataNascimento, email, senha, telefone, celular, cnh, perfil);
 	}
  
 	

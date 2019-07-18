@@ -42,7 +42,7 @@ public class UsuarioController {
 	public List<UsuarioDto> lista(String nome) {	
 		List<Usuario> usuario;
 		if(nome == null) {
-			usuario = usuarioRepository.findByTipoUsuarioComum(); 
+			usuario = usuarioRepository.findAll(); 
 		} else {
 			usuario = usuarioRepository.findByNome(nome);
 		}

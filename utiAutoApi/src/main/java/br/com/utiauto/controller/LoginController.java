@@ -25,8 +25,7 @@ public class LoginController {
 	public ResponseEntity<?> login(String email, String senha){
 		Optional<Usuario> optional = usuarioRepository.findByEmailSenha(email, senha);
 		if (optional.isPresent()) {
-			Usuario usuario = usuarioRepository.findByEmail(email);
-			return ResponseEntity.ok(new UsuarioDto(usuario));
+			return ResponseEntity.ok(new UsuarioDto(optional.get()));
 		}
 		return ResponseEntity.notFound().build();	
 	}

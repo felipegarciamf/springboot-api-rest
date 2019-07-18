@@ -3,7 +3,7 @@ package br.com.utiauto.controller.dto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.utiauto.modelo.TipoUsuario;
+import br.com.utiauto.modelo.Perfil;
 import br.com.utiauto.modelo.Usuario;
 
 public class PrestadorDeServicoDto {
@@ -18,8 +18,10 @@ public class PrestadorDeServicoDto {
 	private String telefone; 
 	private String celular;
 	private String cnh;
-	private TipoUsuario tipoUsuario;
+	private List<Perfil> perfil;
 	
+
+
 	public PrestadorDeServicoDto(Usuario usuario) {
 		this.id = usuario.getId();
 		this.nome = usuario.getNome();
@@ -31,7 +33,7 @@ public class PrestadorDeServicoDto {
 		this.telefone = usuario.getTelefone();
 		this.celular = usuario.getCelular();
 		this.cnh = usuario.getCnh();
-		this.tipoUsuario = usuario.getTipoUsuario();
+		this.perfil = usuario.getPerfis();
 	}
 	
 	public String getNome() {
@@ -179,9 +181,10 @@ public class PrestadorDeServicoDto {
 		return id;
 	}
 
-	public TipoUsuario getTipoUsuario() {
-		return tipoUsuario;
+	public List<Perfil> getPerfil() {
+		return perfil;
 	}
+
 
 	public static List<PrestadorDeServicoDto> converter(List<Usuario> usuario) {
 		return usuario.stream().map(PrestadorDeServicoDto::new).collect(Collectors.toList());

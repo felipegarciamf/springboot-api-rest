@@ -26,8 +26,8 @@ import br.com.utiauto.controller.dto.PrestadorDeServicoDto;
 import br.com.utiauto.controller.form.AtualizacaoPrestadorDeServicoForm;
 import br.com.utiauto.controller.form.PrestadorDeServicoForm;
 import br.com.utiauto.modelo.Usuario;
+import br.com.utiauto.repository.PerfilRepository;
 import br.com.utiauto.repository.PrestadorDeServicoRepository;
-import br.com.utiauto.repository.TipoUsuarioRepository;
 
 
 @RestController
@@ -40,19 +40,17 @@ public class PrestadorDeServicoController {
 	
 	
 	@Autowired
-	private TipoUsuarioRepository tipoUsuarioRepository;
+	private PerfilRepository perfilRepository;
 	
 	@CrossOrigin
 	@GetMapping
 	@Cacheable(value = "listaDePrestadorDeServico")
 	public List<PrestadorDeServicoDto> lista(String descricao) {	
-		List<Usuario> usuario;
+		List<Usuario> usuario = null;
 		
 		if(descricao == null) {
-			usuario = prestadorDeServicoRepository.findByTipoUsuarioPrestadorDeServico(); 
-		} else {
-			usuario = prestadorDeServicoRepository.findByTipoUsuario_Descricao(descricao); 
-		}
+			usuario = prestadorDeServicoRepository.findAll(); 
+		} 
 		return PrestadorDeServicoDto.converter(usuario);
 	}
 	
@@ -62,7 +60,7 @@ public class PrestadorDeServicoController {
 	@Transactional
 	@CacheEvict(value = "listaDePrestadorDeServico", allEntries = true)
 	public ResponseEntity<PrestadorDeServicoDto> cadastrar(@RequestBody @Valid PrestadorDeServicoForm form, UriComponentsBuilder uriBuilder) {
-		Usuario usuario = form.converter(tipoUsuarioRepository);
+		Usuario usuario = form.converter(perfilRepository);
 		prestadorDeServicoRepository.save(usuario);
 		URI uri = uriBuilder.path("/prestadorservico/{id}").buildAndExpand(usuario.getId()).toUri();
 		return ResponseEntity.created(uri).body(new PrestadorDeServicoDto(usuario));

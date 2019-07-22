@@ -32,6 +32,10 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET, "topicos/*").permitAll()
 		.antMatchers(HttpMethod.GET, "/usuario").permitAll()
 		.antMatchers(HttpMethod.GET, "usuario/*").permitAll()
+		.antMatchers(HttpMethod.GET, "login/*").permitAll()
+		.antMatchers(HttpMethod.GET, "/login").permitAll()
+		.antMatchers(HttpMethod.GET, "prestadorservico/*").permitAll()
+		.antMatchers(HttpMethod.GET, "/prestadorservico").permitAll()
 		.anyRequest().authenticated()
 		.and().formLogin();
 		

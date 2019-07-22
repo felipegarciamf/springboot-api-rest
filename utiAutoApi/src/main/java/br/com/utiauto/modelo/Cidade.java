@@ -1,20 +1,17 @@
 package br.com.utiauto.modelo;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
-public class TipoUsuario {
-	
+public class Cidade {
+
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String descricao;
-	private LocalDateTime dataCriacao = LocalDateTime.now();
+	
+	private String cidade;
 	
 	
 	@Override
@@ -33,7 +30,7 @@ public class TipoUsuario {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TipoUsuario other = (TipoUsuario) obj;
+		Cidade other = (Cidade) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -41,25 +38,34 @@ public class TipoUsuario {
 			return false;
 		return true;
 	}
-	
-	
+
+	/**
+	 * @return the id
+	 */
 	public Long getId() {
 		return id;
 	}
+
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public LocalDateTime getDataCriacao() {
-		return dataCriacao;
-	}
-	public void setDataCriacao(LocalDateTime dataCriacao) {
-		this.dataCriacao = dataCriacao;
+
+	/**
+	 * @return the cidade
+	 */
+	public String getCidade() {
+		return cidade;
 	}
 
+	/**
+	 * @param cidade the cidade to set
+	 */
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	
+	
 }

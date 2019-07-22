@@ -1,8 +1,10 @@
 package br.com.utiauto.controller.form;
 
-import br.com.utiauto.modelo.TipoUsuario;
+import java.util.List;
+
+import br.com.utiauto.modelo.Perfil;
 import br.com.utiauto.modelo.Usuario;
-import br.com.utiauto.repository.TipoUsuarioRepository;
+import br.com.utiauto.repository.PerfilRepository;
 
 public class PrestadorDeServicoForm {
 	
@@ -162,10 +164,9 @@ public class PrestadorDeServicoForm {
 	}
 	
 	
-	
-	public Usuario converter(TipoUsuarioRepository tipoUsuarioRepository) {
-		TipoUsuario tipoUsuario = tipoUsuarioRepository.findByDescricao(descricao);
-		return new Usuario(nome, sobrenome, cpf, rg, dataNascimento, email, senha, telefone, celular, cnh, tipoUsuario);
+	public Usuario converter(PerfilRepository perfilRepository) {
+		List<Perfil> perfil = perfilRepository.findByNome(descricao);
+		return new Usuario(nome, sobrenome, cpf, rg, dataNascimento, email, senha, telefone, celular, cnh, perfil);
 	}
 
 }

@@ -33,9 +33,11 @@ public class Usuario implements UserDetails{
 	private String cnh;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
  
+	
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Perfil> perfis = new ArrayList<>();
-
+	
+	
 	@OneToOne(mappedBy="usuario")
 	private Automovel automovel;
 
@@ -240,4 +242,5 @@ public class Usuario implements UserDetails{
 	public List<Perfil> getPerfis() {
 		return perfis;
 	}
+
 }

@@ -27,9 +27,15 @@ public class UsuarioForm {
 
 	private String senha;
 	
-
 	private String telefone; 
 
+	private String celular;
+
+	private String cnh;
+	
+	private List<Perfil> perfil;
+	
+	
 	/**
 	 * @return the perfil
 	 */
@@ -42,16 +48,6 @@ public class UsuarioForm {
 	public void setPerfil(List<Perfil> perfil) {
 		this.perfil = perfil;
 	}
-
-	private String celular;
-
-	private String cnh;
-	
-	private List<Perfil> perfil;
-	
-	
-	
-	
 	
 	public String getNome() {
 		return nome;

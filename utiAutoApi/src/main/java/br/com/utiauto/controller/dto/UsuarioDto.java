@@ -1,10 +1,10 @@
 package br.com.utiauto.controller.dto;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import br.com.utiauto.modelo.Perfil;
+import br.com.utiauto.modelo.Servico;
 import br.com.utiauto.modelo.Usuario;
 
 public class UsuarioDto {
@@ -36,7 +36,7 @@ public class UsuarioDto {
 		this.perfis = usuario.getPerfis();
 	}
 
-	
+
 	/**
 	 * @return the perfis
 	 */

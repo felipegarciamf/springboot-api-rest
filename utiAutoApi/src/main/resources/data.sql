@@ -1,11 +1,22 @@
 INSERT INTO PERFIL(nome) VALUES ('usuario');
-INSERT INTO PERFIL(nome) VALUES ('mecanico');
-INSERT INTO PERFIL(nome) VALUES ('chaveiro');
+INSERT INTO PERFIL(nome) VALUES ('prestadorservico');
+
+INSERT INTO SERVICO (icone_servico, nome_servico) VALUES ('ico-03', 'Mecânico');
+INSERT INTO SERVICO (icone_servico, nome_servico) VALUES ('ico-03', 'Chaveiro');
+INSERT INTO SERVICO (icone_servico, nome_servico) VALUES ('ico-03', 'Eletricista');
+
+
+
 INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Sileira', 'Garcia', 40173586830, 49383012, '03/12/1989', 'teste@gmail.com', 11968613451, 199565959, '45645664', '$2a$10$AhQIn9jaavzlc/j3F4/CYu9iOp.Q9I/T8Voa0qJqMV/wXa28Speva');
 INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Sileira', 'Garcia', 40173586830, 49383012, '03/12/1989', 'teste11@gmail.com', 11968613451, 199565959, '45645664', '$2a$10$AhQIn9jaavzlc/j3F4/CYu9iOp.Q9I/T8Voa0qJqMV/wXa28Speva');
 INSERT INTO USUARIO_PERFIS(usuario_id, perfis_id) VALUES (1,1);
 INSERT INTO USUARIO_PERFIS(usuario_id, perfis_id) VALUES (1,2);
-INSERT INTO USUARIO_PERFIS(usuario_id, perfis_id) VALUES (1,3);
+
+
+INSERT INTO PERFIL_SERVICO (perfil_id, servico_id) VALUES (2,2);
+INSERT INTO PERFIL_SERVICO (perfil_id, servico_id) VALUES (2,3);
+INSERT INTO PERFIL_SERVICO (perfil_id, servico_id) VALUES (2,1);
+
 
 INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Vanderlei', 'Silva', 40173586830, 49383012, '03/12/1989', 'teste2@gmail.com', 11968613451, 199565959, '45645664', '$2a$10$AhQIn9jaavzlc/j3F4/CYu9iOp.Q9I/T8Voa0qJqMV/wXa28Speva');
 INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Vanderlei', 'Silva', 40173586830, 49383012, '03/12/1989', 'teste3@gmail.com', 11968613451, 199565959, '45645664', '$2a$10$AhQIn9jaavzlc/j3F4/CYu9iOp.Q9I/T8Voa0qJqMV/wXa28Speva');

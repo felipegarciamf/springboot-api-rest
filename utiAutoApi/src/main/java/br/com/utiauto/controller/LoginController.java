@@ -22,7 +22,7 @@ public class LoginController {
 	
 	@CrossOrigin
 	@GetMapping
-	public ResponseEntity<?> login(String email, String senha){
+	public ResponseEntity<?> login(String email, String senha, String tipo){
 		Optional<Usuario> optional = usuarioRepository.findByEmailSenha(email, senha);
 		if (optional.isPresent()) {
 			return ResponseEntity.ok(new UsuarioDto(optional.get()));

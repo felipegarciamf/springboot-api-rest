@@ -57,6 +57,7 @@ public class UsuarioController {
 	public ResponseEntity<UsuarioDto> casdastrar(@RequestBody @Valid UsuarioForm form, UriComponentsBuilder uriBuilder) {
 		Usuario usuario = form.converter();
 		usuarioRepository.save(usuario);
+		
 		URI uri = uriBuilder.path("/usuario/{id}").buildAndExpand(usuario.getId()).toUri();
 		return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
 	}

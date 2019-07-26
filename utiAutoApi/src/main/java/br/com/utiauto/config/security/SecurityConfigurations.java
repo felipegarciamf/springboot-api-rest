@@ -55,6 +55,8 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET, "/servicos").permitAll()
 		.antMatchers(HttpMethod.GET, "/servicos/**").permitAll()
 		.antMatchers(HttpMethod.GET, "/usuario").permitAll()
+		.antMatchers(HttpMethod.POST, "/usuario").permitAll()
+		.antMatchers(HttpMethod.POST, "/usuario/**").permitAll()
 		.antMatchers(HttpMethod.GET, "/usuario/*").permitAll()
 		.antMatchers(HttpMethod.GET, "/login/*").permitAll()
 		.antMatchers(HttpMethod.GET, "/login").permitAll()
@@ -70,6 +72,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	// Configurações de recursos estáticos(js, css, imagens, etc.)
 	@Override
 	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configurations/**", "/swagger-resources/**", "/h2-console/**");
 	}
 	
 	/*

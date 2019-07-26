@@ -2,6 +2,8 @@ package br.com.utiauto.controller.form;
 
 import java.util.List;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import br.com.utiauto.modelo.Perfil;
 import br.com.utiauto.modelo.Usuario;
 
@@ -111,7 +113,7 @@ public class UsuarioForm {
 	}
 	
 	public Usuario converter() {
-		return new Usuario(nome, sobrenome, cpf, rg, dataNascimento, email, senha, telefone, celular, cnh, perfil);
+		return new Usuario(nome, sobrenome, cpf, rg, dataNascimento, email, new BCryptPasswordEncoder().encode(senha), telefone, celular, cnh, perfil);
 	}
  
 	

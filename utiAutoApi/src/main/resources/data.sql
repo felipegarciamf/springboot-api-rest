@@ -41,5 +41,6 @@ INSERT INTO AUTOMOVEL(modelo, ano, marca, renavam, cor, placa) VALUES ('ONIX LTZ
 
 INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('CARRO QUEBRADO', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',200.0, 1);
 INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('Perdi Minha Chave', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',140.0, 1);
-
+INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('Perdi Minha Chave', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',140.0, 2);
+INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('Perdi Minha Chave', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',140.0, 3);
 

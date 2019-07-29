@@ -46,6 +46,8 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+		.antMatchers(HttpMethod.POST, "/**").permitAll()
+		.antMatchers(HttpMethod.GET, "/**").permitAll()
 		.antMatchers(HttpMethod.POST, "/auth").permitAll()
 		.antMatchers(HttpMethod.GET, "/auth").permitAll()
 		.antMatchers(HttpMethod.GET, "/actuator").permitAll()
@@ -56,9 +58,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET, "/servicos").permitAll()
 		.antMatchers(HttpMethod.GET, "/servicos/**").permitAll()
 		.antMatchers(HttpMethod.GET, "/usuario").permitAll()
+		.antMatchers(HttpMethod.GET, "/usuario/**").permitAll()
 		.antMatchers(HttpMethod.POST, "/usuario").permitAll()
 		.antMatchers(HttpMethod.POST, "/usuario/**").permitAll()
-		.antMatchers(HttpMethod.GET, "/usuario/*").permitAll()
 		.antMatchers(HttpMethod.GET, "/login/*").permitAll()
 		.antMatchers(HttpMethod.GET, "/login").permitAll()
 		.antMatchers(HttpMethod.GET, "/prestadorservico/*").permitAll()

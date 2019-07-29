@@ -32,7 +32,6 @@ public class Chamado {
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 	
 
-
 	@Enumerated(EnumType.STRING)
 	private StatusChamado status = StatusChamado.NAO_RESPONDIDO;
 	

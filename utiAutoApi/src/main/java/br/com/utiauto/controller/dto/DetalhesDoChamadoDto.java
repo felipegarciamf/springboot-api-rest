@@ -27,7 +27,6 @@ public class DetalhesDoChamadoDto {
 		this.status = chamado.getStatus();
 		this.respostas = new ArrayList<>();
 		this.respostas.addAll(chamado.getMensagens().stream().map(MensagemDto::new).collect(Collectors.toList()));
-		
 	}
 	
 	

@@ -1,14 +1,25 @@
 package br.com.utiauto.controller.form;
 
 import br.com.utiauto.modelo.Chamado;
+import br.com.utiauto.modelo.Usuario;
 
 public class ChamadoForm {
 	
 	private String descricao;
 	private String cep;
 	private String mensagem;
+	private Usuario cliente;
+	private long valor;
 
 	
+
+	public long getValor() {
+		return valor;
+	}
+
+	public void setValor(long valor) {
+		this.valor = valor;
+	}
 
 	public String getDescricao() {
 		return descricao;
@@ -34,10 +45,20 @@ public class ChamadoForm {
 		this.mensagem = mensagem;
 	}
 
-	public Chamado converter() {
-		// TODO Auto-generated method stub
-		return new Chamado(descricao, cep, mensagem);
+	
+	public Usuario getCliente() {
+		return cliente;
 	}
+
+	public void setCliente(Usuario cliente) {
+		this.cliente = cliente;
+	}
+
+	public Chamado converter() {
+		return new Chamado(descricao, cep, mensagem, cliente, valor);
+	}
+
+
 	
 
 }

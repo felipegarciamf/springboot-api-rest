@@ -26,9 +26,13 @@ public class Chamado {
 	private String cep;
 	
 	private String mensagem;
+	
+	private long valor;
 
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 	
+
+
 	@Enumerated(EnumType.STRING)
 	private StatusChamado status = StatusChamado.NAO_RESPONDIDO;
 	
@@ -43,10 +47,12 @@ public class Chamado {
 		
 	}
 	
-	public Chamado(String descricao, String cep, String mensagem) {
+	public Chamado(String descricao, String cep, String mensagem, Usuario cliente, long valor) {
 		this.descricao = descricao;
 		this.cep = cep;
 		this.mensagem = mensagem;
+		this.cliente = cliente;
+		this.valor = valor;
 	}
 
 	public StatusChamado getStatus() {
@@ -59,14 +65,7 @@ public class Chamado {
 	}
 
 
-	public Usuario getCliente() {
-		return cliente;
-	}
 
-
-	public void setCliente(Usuario cliente) {
-		this.cliente = cliente;
-	}
 
 
 	public long getId() {
@@ -127,6 +126,23 @@ public class Chamado {
 		this.mensagem = mensagem;
 	}
 
+	public Usuario getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Usuario cliente) {
+		this.cliente = cliente;
+	}
+	
+	public long getValor() {
+		return valor;
+	}
+
+	public void setValor(long valor) {
+		this.valor = valor;
+	}
+	
+	
 
 	
 }

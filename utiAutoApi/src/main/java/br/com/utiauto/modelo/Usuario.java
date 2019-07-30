@@ -235,7 +235,7 @@ public class Usuario implements UserDetails{
 	public void setPerfis(List<Perfil> perfis) {
 		this.perfis = perfis;
 	}
-	
+
 	/**
 	 * @return the perfis
 	 */

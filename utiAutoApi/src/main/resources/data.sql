@@ -6,8 +6,9 @@ INSERT INTO PERFIL(nome) VALUES ('prestadorservico');
 INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Eletricista', 'icon ion-flash');
 /*INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Chaveiro', 'icon ion-key'); */
 
-INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Sileira da Massa', 'Garcia', 40173586830, 49383012, '03/12/1989', 'teste@gmail.com', 11968613451, 199565959, '45645664', 'teste123');
-INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Sileira do Role', 'Garcia', 40173586830, 49383012, '03/12/1989', 'teste11@gmail.com', 11968613451, 199565959, '45645664', '$2a$10$AhQIn9jaavzlc/j3F4/CYu9iOp.Q9I/T8Voa0qJqMV/wXa28Speva');
+INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Silas', 'Garcia', 40173586830, 49383012, '03/12/1989', 'silas.garcia@faculdadeimpacta.com.br', 11968613451, 199565959, '45645664', 'teste123');
+INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Vanderlei','Silva', 40173586830, 49383012, '03/12/1975', 'vanderlei.silva@faculdadeimpacta.com.br', 11968613451, 199565959, '45645664', 'teste123');
+INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Motorista Doidão','Silva', 40173586830, 49383012, '03/12/1975', 'prestador@gmail.com', 11968613451, 1199565959, '45645664', 'teste123');
 INSERT INTO USUARIO_PERFIS(usuario_id, perfis_id) VALUES (1,1);
 INSERT INTO USUARIO_PERFIS(usuario_id, perfis_id) VALUES (1,2);
 
@@ -38,7 +39,7 @@ INSERT INTO TOPICO(titulo, mensagem, data_criacao, status, autor_id, curso_id) V
 INSERT INTO AUTOMOVEL(modelo, ano, marca, renavam, cor, placa) VALUES ('ONIX LTZ', 2018, 'CHEVROLET', 46516156, 'PRETO', 'FFE-0021');
 
 INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('CARRO QUEBRADO', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',200.0, 1);
-INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('Perdi Minha Chave', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',140.0, 1);
-INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('Perdi Minha Chave', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',140.0, 2);
-INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('Perdi Minha Chave', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',140.0, 3);
+/* INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('Perdi Minha Chave', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',200.0, 1); */
+INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('Perdi Minha Chave', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',200.0, 2);
+/* INSERT INTO CHAMADO(descricao, cep, mensagem, data_criacao, status, valor, cliente_id) VALUES('Perdi Minha Chave', '02013050', 'meu carroq quebrou', '2019-05-05 20:33', 'NAO_RESPONDIDO',150.0, 2); */
 

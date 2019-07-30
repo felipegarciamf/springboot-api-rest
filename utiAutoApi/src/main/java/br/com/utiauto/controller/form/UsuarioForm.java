@@ -12,21 +12,16 @@ public class UsuarioForm {
 
 	private String nome;
 	
-
 	private String sobrenome;
 
 	private String cpf;
-	
 
 	private String rg;
 	
-
 	private String dataNascimento;
-	
 
 	private String email;
 	
-
 	private String senha;
 	
 	private String telefone; 
@@ -113,7 +108,7 @@ public class UsuarioForm {
 	}
 	
 	public Usuario converter() {
-		return new Usuario(nome, sobrenome, cpf, rg, dataNascimento, email, new BCryptPasswordEncoder().encode(senha), telefone, celular, cnh, perfil);
+		return new Usuario(nome, sobrenome, cpf, rg, dataNascimento, email, /*new BCryptPasswordEncoder().encode()*/senha, telefone, celular, cnh, perfil);
 	}
  
 	

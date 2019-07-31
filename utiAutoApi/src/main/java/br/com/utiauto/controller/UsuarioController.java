@@ -54,9 +54,10 @@ public class UsuarioController {
 	@PostMapping
 	@Transactional
 	@CacheEvict(value = "listaDeUsuarios", allEntries = true)
-	public ResponseEntity<UsuarioDto> casdastrar(@RequestBody @Valid UsuarioForm form, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<UsuarioDto> cadastrar(@RequestBody @Valid UsuarioForm form, UriComponentsBuilder uriBuilder) {
 		Usuario usuario = form.converter();
 		usuarioRepository.save(usuario);
+		
 		URI uri = uriBuilder.path("/usuario/{id}").buildAndExpand(usuario.getId()).toUri();
 		return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
 	}
@@ -70,6 +71,7 @@ public class UsuarioController {
 		}
 		return ResponseEntity.notFound().build();		
 	}
+	
 	
 	@CrossOrigin
 	@PutMapping("/{id}")

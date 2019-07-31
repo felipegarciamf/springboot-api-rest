@@ -46,6 +46,7 @@ public class ServicosController {
 		return ServicoDto.converter(servico);
 	}
 	
+	@CrossOrigin
 	@PostMapping
 	public ResponseEntity<ServicoDto> cadastrar(@RequestBody @Valid ServicoForm form, UriComponentsBuilder uriBuilder) {
 		Servico servico = form.converter();
@@ -54,6 +55,7 @@ public class ServicosController {
 		return ResponseEntity.created(uri).body(new ServicoDto(servico));
 	}
 	
+	@CrossOrigin
 	@GetMapping("/{id}")
 	public ResponseEntity<DetalhesDoServicoDto> detalhar(@PathVariable Long id) {
 		Optional<Servico> servico = servicoRepository.findById(id);
@@ -63,6 +65,7 @@ public class ServicosController {
 		return ResponseEntity.notFound().build();		
 	}
 	
+	@CrossOrigin
 	@PutMapping("/{id}")
 	@Transactional
 	public ResponseEntity<ServicoDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizacaoServicoForm form){
@@ -74,6 +77,7 @@ public class ServicosController {
 		return ResponseEntity.notFound().build();	
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity<?> remover(@PathVariable Long id){

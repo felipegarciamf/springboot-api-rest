@@ -30,16 +30,25 @@ public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {
 	}
 
 	@Override
-	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+	protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain filterChain)
 			throws ServletException, IOException {
 		
-		String token = recuperarToken(request);
+		String token = recuperarToken(req);
 		boolean valido = tokenService.isTokenValido(token);
 		if(valido) {
 			autenticarCliente(token);
 		}
-
-		filterChain.doFilter(request, response);
+		
+			final HttpServletResponse response = (HttpServletResponse) res;
+	        response.setHeader("Access-Control-Allow-Origin", "*");
+	        response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
+	        response.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
+	        response.setHeader("Access-Control-Max-Age", "3600");
+	        if ("OPTIONS".equalsIgnoreCase(((HttpServletRequest) req).getMethod())) {
+	            response.setStatus(HttpServletResponse.SC_OK);
+	        } else {
+	        	filterChain.doFilter(req, res);
+	        }
 	}
 
 	private void autenticarCliente(String token) {

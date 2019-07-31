@@ -10,7 +10,6 @@ public class DetalhesDoServicoDto {
 	
 	private String iconeServico;
 	
-
 	public DetalhesDoServicoDto(Servico servico) {
 		this.id = servico.getId();
 		this.nomeServico = servico.getNomeServico();

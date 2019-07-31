@@ -13,13 +13,13 @@ public class AutomovelForm {
 	@NotNull @NotEmpty @Length(min = 1)
 	private String modelo;
 	
-	@NotNull @NotEmpty @Length(max = 4, min = 4)
+	@NotNull
 	private int ano;
 	
 	@NotNull @NotEmpty
 	private String marca;
 	
-	@NotNull @NotEmpty @Length(max = 10, min = 10)
+	@NotNull 
 	private Long renavam;
 	
 	@NotNull @NotEmpty

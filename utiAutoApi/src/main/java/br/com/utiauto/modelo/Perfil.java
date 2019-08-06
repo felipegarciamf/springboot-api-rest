@@ -24,10 +24,6 @@ public class Perfil implements GrantedAuthority {
 	private List<Servico> servico;
 	
 	
-	
-	
-	
-	
 	/**
 	 * @return the servico
 	 */

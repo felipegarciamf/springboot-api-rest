@@ -2,9 +2,9 @@
 INSERT INTO PERFIL(nome) VALUES ('usuario');
 INSERT INTO PERFIL(nome) VALUES ('prestadorservico');
 
-/* INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Mecânico', 'icon ion-wrench'); */
+INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Mecânico', 'icon ion-wrench'); 
 INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Eletricista', 'icon ion-flash');
-/*INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Chaveiro', 'icon ion-key'); */
+INSERT INTO SERVICO(nome_servico, icone_servico) VALUES ('Chaveiro', 'icon ion-key'); 
 INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Silas', 'Garcia', 40173586830, 49383012, '03/12/1989', 'teste', 11968613451, 199565959, '45645664', 'teste123');
 INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Silas', 'Garcia', 40173586830, 49383012, '03/12/1989', 'silas.garcia@faculdadeimpacta.com.br', 11968613451, 199565959, '45645664', 'teste123');
 INSERT INTO USUARIO(nome, sobrenome, cpf, rg, data_nascimento, email, telefone, celular, cnh, senha) VALUES('Vanderlei','Silva', 40173586830, 49383012, '03/12/1975', 'vanderlei.silva@faculdadeimpacta.com.br', 11968613451, 199565959, '45645664', 'teste123');

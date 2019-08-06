@@ -1,5 +1,8 @@
 package br.com.utiauto.controller.dto;
 
+import java.util.List;
+
+import br.com.utiauto.modelo.Perfil;
 import br.com.utiauto.modelo.Usuario;
 
 public class DetalhesDoUsuarioDto {
@@ -10,7 +13,9 @@ public class DetalhesDoUsuarioDto {
 	private String email;
 	private String celular;
 	private String cnh;
+	private List<Perfil> perfis;
 	
+
 
 	public DetalhesDoUsuarioDto(Usuario usuario) {
 		this.nome = usuario.getNome();
@@ -19,6 +24,7 @@ public class DetalhesDoUsuarioDto {
 		this.email = usuario.getEmail();
 		this.celular = usuario.getCelular();
 		this.cnh = usuario.getCnh();
+		this.perfis = usuario.getPerfis();
 	}
 	
 	
@@ -40,7 +46,10 @@ public class DetalhesDoUsuarioDto {
 	public String getCnh() {
 		return cnh;
 	}
-	
+	public List<Perfil> getPerfis() {
+		return perfis;
+	}
+
 	
 
 }
